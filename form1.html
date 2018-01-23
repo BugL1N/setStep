@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello world!</title>
+    <!-- zui -->
+    <link href="css/zui.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/font-face.css">
+    <link rel="stylesheet" type="text/css" href="css/ystep.css">
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div class="container" style="background-color: #EDEDED;padding: 10px 5px;">
+        <div class=" container-fluid">
+            <div class="" style="float: left;background-color: #EDEDED;">
+                <h5>我的服务申请列表</h5>
+            </div>
+            <div style="float: right;padding-top: 6px;">
+                <button class="btn btn-mini " id="none-btn" type="button" style="background-color:#E97167;color:#fff;border-radius: 25px; ">未结束<span>1</span></button>
+                <button class="btn btn-mini " id="all-btn" type="button" style="background-color:#777777;color:#fff;border-radius: 25px; ">全部<span>1</span></button>
+            </div>
+        </div>
+        <div class="all-bd container-fluid" id="all-bd" style="background-color: #fff;padding: 20px 5px; display: block;">
+            <!-- <div class="panel done" style="display: block;">
+                <table class="table" style="border:1px solid #DDDDDD;border-radius: 25px;">
+                    <tbody style="border-radius: 25%;">
+                        <tr>
+                            <td style="width: 30%;">工单编号：</td>
+                            <td style="width: 40%;">
+                                <p style="color: #80C657;margin:0;"><a>Q</a>20161215001</p>
+                            </td>
+                            <td style="width: 30%;text-align: right;"> <button class="btn btn-mini " type="button" style="background-color:#7AC857;color:#fff;border-radius: 25px; "><i class="iconfont" style="font-size: 12px;">&#xe627;</i>&nbsp;&nbsp;王梁</td>
+                        </tr>
+                        <tr style="display:none ;">
+                            <td colspan="3"><div><a href="">1</a></div></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%;">服务描述：</td>
+                            <td style="width: 70%;"> <p style="color: #646464;margin:0;">电脑黑屏了</p></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 30%;">完结描述：</td>
+                            <td style="width: 70%;"> <p style="color: #646464;margin:0;">啦啦啦啦啦</p></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="border-bottom: 1px dashed #DDDDDD;">
+                    <div class="stepCont" id="stepCont123">
+                        <div class='ystep-container ystep-lg ystep-blue'></div>
+                    </div>
+                </div>
+                <div class="container-fluid" style="text-align: right;padding: 5px 10px;">
+                    <a style="color: #7AC857;font-size: 14px;"><i class="iconfont">&#xe60a;</i>点赞</a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/setStep.js"></script>
+    <script src="js/zui.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            var error_msg = function(_id, num) {
+                console.log(_id, num);
+                var step = new SetStep({
+                    content: '#' + _id,
+                    curStep: num
+                })
+            }
+            for (var i = 0; i < 5; i++) {
+                $("#all-bd").append(
+                    "<div class='panel done' style='display: block;'>" +
+                    "<table class='table'  style='border:1px solid #DDDDDD;border-radius: 25px;'>" +
+                    "<tbody style='border-radius: 25%;'>" +
+                    "<tr>" +
+                    "<td style='width: 30%;'>工单编号： </td>" +
+                    "<td style='width: 40%;'>" + "<p style='color: #80C657;margin:0;'>" + "<a > Q </a> " + "20161215001" + " </p>" + "</td>" +
+                    "<td style='width: 30%;text-align: right;'>" + "<button class='btn btn-mini ' type='button' style='background-color:#7AC857;color:#fff;border-radius: 25px; '>" +
+                    "<i class='iconfont' style='font-size: 12px;'>&#xe627;</i>王梁 </td>" +
+                    "</tr>" +
+                    "<tr style='display:none ;'>" +
+                    "<td colspan='3'>" + "<div>" + "<a href=''>1 </a>" + "</div>" + "</td>" +
+                    "</tr>" +
+                    "<tr>" +
+                    "<td style='width: 30%;'>服务描述： </td>" +
+                    "<td style='width: 70%;'>" + "<p style='color: #646464;margin:0;'>" + "电脑黑屏了" + " </p>" + "</td>" +
+                    "<td>" + "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "<div style='border-bottom: 1px dashed #DDDDDD;'>" +
+                    "<div class='stepCont' id='stepCont" + i + "'>" +
+                    "<div class='ystep-container ystep-lg ystep-blue'></div>" +
+                    "</div>" +
+                    "</div>" +
+                    "<div class='container-fluid' style='text-align: right;padding: 5px 10px;'>" +
+                    "<a style='color: #7AC857;font-size: 14px;'>" + "<i class='iconfont'>&#xe60a;</i>点赞</a>" +
+                    "</div>" +
+                    "</div>"
+                )
+                console.log("stepCont" + i);
+                console.log(i);
+                error_msg("stepCont" + i, 5);
+            }
+
+        });
+    </script>
+</body>
+
+</html>
